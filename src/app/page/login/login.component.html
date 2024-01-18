@@ -1,0 +1,27 @@
+<body>
+    <app-navbar>
+    </app-navbar>
+    <div class="container">
+        <div class="row login">
+            <div class="col">
+                <img class="imageilustration" src="assets/loginilustration.png" alt="Login Ilustration">
+            </div>
+            <div class="col">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <div class="login-input-wrapper">
+                        <h3>Login</h3>
+                        <div class="inputwrapper">
+                            <p>Email</p>
+                            <input type="text" id="username" formControlName="email" placeholder="youremail@mail.com" required/>
+                        </div>
+                        <div class="inputwrapper">
+                            <p>Password</p>
+                            <input id="password" formControlName="password" type="password" placeholder="Enter your password" required/>
+                        </div>
+                        <button type="submit" class="login-button">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

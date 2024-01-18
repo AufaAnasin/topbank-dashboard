@@ -1,0 +1,41 @@
+.imageilustration {
+    width: 600px;
+    height: auto;
+}
+
+.login {
+    margin-top: 40px;
+}
+
+.login-input-wrapper h3 {
+    font-weight: 800;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+.inputwrapper input {
+    width: 30vw;
+    height: 65px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 0 0 28px;
+    outline: none;
+    background-color: #EFF0F2;
+}
+
+.inputwrapper {
+    margin-bottom: 20px;
+}
+
+.warningtext {
+    color: red;
+}
+
+.login-button {
+    width: 30vw;
+    height: 64px;
+    border-radius: 36px;
+    border: none;
+    color: white;
+    background-color:#006EFF;
+    margin-top: 60px;
+}

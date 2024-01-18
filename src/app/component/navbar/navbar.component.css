@@ -1,0 +1,14 @@
+.navbar-wrapper {
+    width: 100vw;
+    height: 115px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.text-wrapper h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1A96F0;
+    padding: 0 52px 0 52px;
+}
