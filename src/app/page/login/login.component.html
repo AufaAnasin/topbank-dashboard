@@ -2,6 +2,7 @@
     <app-navbar>
     </app-navbar>
     <div class="container">
+        <p-toast></p-toast>
         <div class="row login">
             <div class="col">
                 <img class="imageilustration" src="assets/loginilustration.png" alt="Login Ilustration">
@@ -12,11 +13,17 @@
                         <h3>Login</h3>
                         <div class="inputwrapper">
                             <p>Email</p>
-                            <input type="text" id="username" formControlName="email" placeholder="youremail@mail.com" required/>
+                            <input type="text" id="email" formControlName="email" placeholder="youremail@mail.com" required/>
+                            <span *ngIf="loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" id="emailerror">⚠️ Email is Required</span>
+                            <span *ngIf="loginForm.get('email')?.hasError('email') && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">⚠️ Invalid Email Format</span>
                         </div>
                         <div class="inputwrapper">
                             <p>Password</p>
                             <input id="password" formControlName="password" type="password" placeholder="Enter your password" required/>
+                            <span *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" id="emailerror">⚠️ Password is Required</span>
+                            <span *ngIf="loginForm.get('password')?.hasError('minLength') && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">Password at Least 8 Characters.</span>
+                            <span *ngIf="loginForm.get('password')?.hasError('maxLength') && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">Password Cannot Exceed More Than 40 Characters.</span>
+                            <span *ngIf="loginForm.get('password')?.hasError('pattern') && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">⚠️ Password must contain at least one lowercase and one uppercase letter.</span>
                         </div>
                         <button type="submit" class="login-button">Login</button>
                     </div>

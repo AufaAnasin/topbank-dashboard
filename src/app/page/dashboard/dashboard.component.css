@@ -1,24 +1,20 @@
-.dashboard-wrapper { 
-    display: grid;
-    grid-template-areas: 
-    'sidebar header header header header'
-    'sidebar content content content content'
-    'sidebar content content content content'
-    'sidebar content content content content'
-    ;
-    gap: 10px;
+.dashboard-wrapper {
+    display: flex;
 }
 
-.content { 
-    grid-area: content;
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-.navbar {
-    grid-area: header;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.content-wrapper {
+    padding: 24px;
 }
 
-.sidebar {
-    grid-area: sidebar;
-    width: 300px;
+.text-container h4 {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
 }

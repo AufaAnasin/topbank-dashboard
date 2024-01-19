@@ -4,10 +4,9 @@ import { SidebarModule } from './../../component/sidebar/sidebar.module';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
-const routes: Routes = [
-  { path: '', component: DashboardComponent },
-];
+
 
 @NgModule({
   declarations: [
@@ -17,7 +16,7 @@ const routes: Routes = [
     CommonModule,
     NavbarModule,
     SidebarModule,
-    RouterModule.forChild(routes)
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule {

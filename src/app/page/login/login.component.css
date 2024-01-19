@@ -24,10 +24,16 @@
 
 .inputwrapper {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .warningtext {
     color: red;
+}
+
+.inputwrapper span {
+    margin-top: 12px;
 }
 
 .login-button {
