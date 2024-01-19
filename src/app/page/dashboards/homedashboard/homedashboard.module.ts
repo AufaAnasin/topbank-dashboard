@@ -7,7 +7,7 @@ import { HomedashboardComponent } from './homedashboard.component';
 
 @NgModule({
   declarations: [
-    
+    HomedashboardComponent
   ],
   imports: [
     CommonModule,

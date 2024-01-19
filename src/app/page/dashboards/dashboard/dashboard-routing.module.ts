@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: 'home', loadChildren: () => import('./dashboard.module').then((m) => m.DashboardModule) }
   ]
 },
-  { path: 'home', loadChildren: () => import('../homedashboard/homedashboard.module').then(m => m.HomedashboardModule) }
+  { path: 'home', loadChildren: () => import('../../dashboards/homedashboard/homedashboard.module').then(m => m.HomedashboardModule) }
 ];
 
 @NgModule({
