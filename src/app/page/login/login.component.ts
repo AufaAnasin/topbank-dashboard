@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           if ((response.success==true) && (response.data.adminRoleDto.adminRoleId == 1)) {
             this.authService.getIsAuthenticated().next(true)
             console.log('sampai sini')
-            this.router.navigate(['dashboard/home'])
+            this.router.navigate(['dashboard'])
             console.log('gak sampai sini')
           } else if ((response.success==true) && (response.data.adminRoleDto.adminRoleId != 1)) {
             this.messageService.add({severity: 'error', summary: 'Youre not allowed', detail: 'Not for your role'})

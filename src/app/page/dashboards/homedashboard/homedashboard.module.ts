@@ -12,6 +12,9 @@ import { HomedashboardComponent } from './homedashboard.component';
   imports: [
     CommonModule,
     HomedashboardRoutingModule
+  ],
+  exports: [
+    HomedashboardComponent
   ]
 })
 export class HomedashboardModule { }

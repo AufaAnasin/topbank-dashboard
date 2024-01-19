@@ -5,6 +5,8 @@ import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { HomedashboardModule } from '../homedashboard/homedashboard.module';
+import { HomedashboardComponent } from '../homedashboard/homedashboard.component';
 
 
 
@@ -16,7 +18,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     CommonModule,
     NavbarModule,
     SidebarModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
   ]
 })
 export class DashboardModule {

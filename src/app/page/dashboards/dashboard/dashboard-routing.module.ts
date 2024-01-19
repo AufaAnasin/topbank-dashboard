@@ -5,11 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', component: DashboardComponent, 
   children: [
-    { path: '', redirectTo: 'home', pathMatch: 'full'},
-    { path: 'home', loadChildren: () => import('./dashboard.module').then((m) => m.DashboardModule) }
+    { path: '', redirectTo: '', pathMatch: 'full'},
+    { path: '', loadChildren: () => import('../homedashboard/homedashboard.module').then((m) => m.HomedashboardModule) }
   ]
 },
-  { path: 'home', loadChildren: () => import('../../dashboards/homedashboard/homedashboard.module').then(m => m.HomedashboardModule) }
 ];
 
 @NgModule({
