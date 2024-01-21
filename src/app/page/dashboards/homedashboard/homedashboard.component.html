@@ -1,1 +1,42 @@
-<p>homedashboard works!</p>
+<div class="dashboard-wrapper">
+    <div class="dashboard-card">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="dashboard-hover">Dashboard</h3>
+                    <div class="admin-status">
+                        <div class="admin-identity">
+                            <div class="admin-details">
+                                <p>Admin Name</p>
+                                <h6>{{adminData[0].adminName}}</h6>
+                                <!-- <h6>Heri Suganda</h6> -->
+                            </div>
+                            <div class="admin-details">
+                                <p>Admin Code</p>
+                                <!-- <h6>PV-123</h6> -->
+                                <h6>{{adminData[0].adminCode}}</h6>
+                            </div>
+                        </div>
+                        <div class="admin-role">
+                            <div class="admin-details">
+                                <p>Admin Role</p>
+                                <!-- <h6>Lord Admin</h6> -->
+                                <h6>{{adminData[0].adminRoleDto.adminRoleName}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="chart-column">
+                        <p>Tujuan Pembukaan Rekening</p>
+                        <div class="chart-wrapper">
+                            <div class="card flex justify-content-center">
+                                <p-chart #PurposeChart class="dochart" type="doughnut" [data]="data" [options]="options"></p-chart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

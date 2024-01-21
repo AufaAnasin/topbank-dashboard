@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   showWarning: boolean = false;
   loginForm: FormGroup = new FormGroup({})
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private authService: LoginService, private messageService: MessageService) {}
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: LoginService, private messageService: MessageService, private userService: UserService) {}
 
 
   ngOnInit(): void {
@@ -30,10 +31,9 @@ export class LoginComponent implements OnInit {
         (response) => {
           console.log(response)
           if ((response.success==true) && (response.data.adminRoleDto.adminRoleId == 1)) {
-            this.authService.getIsAuthenticated().next(true)
-            console.log('sampai sini')
+            const userIdentity = response.data
+            this.userService.addUserIdentity(userIdentity);
             this.router.navigate(['dashboard'])
-            console.log('gak sampai sini')
           } else if ((response.success==true) && (response.data.adminRoleDto.adminRoleId != 1)) {
             this.messageService.add({severity: 'error', summary: 'Youre not allowed', detail: 'Not for your role'})
          } else {

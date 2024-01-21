@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { HomedashboardRoutingModule } from './homedashboard-routing.module';
 import { HomedashboardComponent } from './homedashboard.component';
+import { ChartModule } from 'primeng/chart';
+
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { HomedashboardComponent } from './homedashboard.component';
   ],
   imports: [
     CommonModule,
-    HomedashboardRoutingModule
+    HomedashboardRoutingModule,
+    ChartModule
   ],
   exports: [
     HomedashboardComponent
