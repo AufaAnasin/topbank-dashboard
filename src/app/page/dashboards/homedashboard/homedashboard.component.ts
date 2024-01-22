@@ -12,7 +12,7 @@ export class HomedashboardComponent implements OnInit {
   options: any;
   adminData: any[];
   dashboardData: any;
-  accountAmountData: any;
+  accountAmountData: any; // is this array record have the data after loadAcccountAmountData?
 
   constructor(private userService: UserService, private dashboardService: DashboardService){
     this.adminData = this.userService.getUserIdentity();
@@ -23,15 +23,15 @@ export class HomedashboardComponent implements OnInit {
   loadAccountAmountData() { 
     this.dashboardService.getDashboardData("customer-summary").subscribe(
       (response) => {
-        this.accountAmountData = response.data
-        console.log(this.accountAmountData)
+        this.accountAmountData = response.data || {}
+        if (this.accountAmountData.year) {
+          delete this.accountAmountData.year // remove the year endpoint
+        }
       }, (error) => {
         console.log(error)
       }
     )
-  }
-
-
+  }  
 
   loadData() { 
     this.dashboardService.getDashboardData("account-purpose-summary").subscribe(
@@ -79,8 +79,13 @@ export class HomedashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadData();
+    this.loadData()
     this.processDashboardData()
+    console.log(this.accountAmountData)
+  }
+
+  ngAfterViewInit() {
+    console.log(this.accountAmountData);
   }
 
 }

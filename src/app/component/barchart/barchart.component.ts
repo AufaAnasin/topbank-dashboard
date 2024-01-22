@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./barchart.component.css']
 })
 export class BarchartComponent implements OnInit {
-  @Input() data: any;
+  @Input() dataAccount: any;
   @Input() labelsAccountAmount: any;
 
   options: any;
@@ -19,14 +19,14 @@ export class BarchartComponent implements OnInit {
     const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
     
-    this.data = {
+    this.dataAccount = {
         labels: this.labelsAccountAmount,
         datasets: [
             {
                 label: 'My First dataset',
                 backgroundColor: documentStyle.getPropertyValue('--blue-500'),
                 borderColor: documentStyle.getPropertyValue('--blue-500'),
-                data: this.data,
+                data: this.dataAccount,
             }
         ]
     };
