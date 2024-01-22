@@ -1,5 +1,6 @@
-.dashboard-wrapper {
+.dashboard-wrappers {
     display: flex;
+    
 }
 
 .flex-container {
@@ -10,6 +11,10 @@
 
 .content-wrapper {
     padding: 24px;
+}
+
+.side-bar { 
+    height: 100vh;
 }
 
 .text-container h4 {

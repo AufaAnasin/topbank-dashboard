@@ -12,18 +12,31 @@ export class HomedashboardComponent implements OnInit {
   options: any;
   adminData: any[];
   dashboardData: any;
+  accountAmountData: any;
 
   constructor(private userService: UserService, private dashboardService: DashboardService){
     this.adminData = this.userService.getUserIdentity();
     console.log(this.adminData[0])
+    this.loadAccountAmountData()
   }
+
+  loadAccountAmountData() { 
+    this.dashboardService.getDashboardData("customer-summary").subscribe(
+      (response) => {
+        this.accountAmountData = response.data
+        console.log(this.accountAmountData)
+      }, (error) => {
+        console.log(error)
+      }
+    )
+  }
+
 
 
   loadData() { 
     this.dashboardService.getDashboardData("account-purpose-summary").subscribe(
         (response) => {
             this.dashboardData = response.data
-            console.log(this.dashboardData)
             this.processDashboardData();
         }, 
         (error) => {
@@ -31,6 +44,8 @@ export class HomedashboardComponent implements OnInit {
         }
     )
   }
+
+  
 
   processDashboardData() {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -65,6 +80,7 @@ export class HomedashboardComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
+    this.processDashboardData()
   }
 
 }

@@ -48,6 +48,24 @@
     align-items: flex-end;
 }
 
+.account-amount-wrapper p { 
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.account-amount-wrapper { 
+    padding: 30px;
+}
+
+.dashboard-wrapper { 
+    height: 100vh;
+}
+
+.second-content { 
+    margin-top: 40px;
+}
+
 app-chart-component .p-chart > .p-panel {
     border: none;
-  }
+}

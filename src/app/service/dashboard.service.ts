@@ -12,6 +12,7 @@ import { Injectable } from '@angular/core';
 export class DashboardService {
   endpoint: string = '';
   private dashboardData:any[] = []
+  private accountAmountServiceData: any[] = []
 
   constructor(private http: HttpClient) { }
 
@@ -28,5 +29,13 @@ export class DashboardService {
 
   getDashboardDataset() {
     return this.dashboardData
+  }
+
+  setAccountAmountData(data: any) {
+    this.accountAmountServiceData = []
+    this.accountAmountServiceData.push(data)
+  }
+  getAccountAmountData() {
+    return this.accountAmountServiceData
   }
 }

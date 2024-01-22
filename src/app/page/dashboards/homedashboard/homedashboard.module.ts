@@ -1,3 +1,4 @@
+import { BarchartModule } from './../../../component/barchart/barchart.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +15,8 @@ import { ChartModule } from 'primeng/chart';
   imports: [
     CommonModule,
     HomedashboardRoutingModule,
-    ChartModule
+    ChartModule,
+    BarchartModule
   ],
   exports: [
     HomedashboardComponent
