@@ -1,0 +1,32 @@
+<p-dialog [(visible)]="visible" [modal]="true" [showHeader]="false" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <div class="dialog-wrapper">
+        <h6>Edit Data Nasabah</h6>
+        <button (click)="closeDialog()">Close</button>
+        <div class="input-container">
+            <div class="input-wrapper-enable">
+                <p>Nama</p>
+                <input type="text" placeholder={{customerName}}>
+            </div>
+            <div class="input-wrapper-enable">
+                <p>Nomor Rekening</p>
+                <input type="text" placeholder="Nama">
+            </div>
+            <div class="input-wrapper-enable">
+                <p>Email</p>
+                <input type="text" placeholder="Nama">
+            </div>
+            <div class="input-wrapper-enable">
+                <p>Nomor Telepon</p>
+                <input type="text" placeholder="Nama">
+            </div>
+            <div class="input-wrapper-enable">
+                <p>Jenis Kartu Kredit</p>
+                <input type="text" placeholder="Nama">
+            </div>
+            <div class="input-wrapper-enable">
+                <p>Nama Gadis Ibu Kandung</p>
+                <input type="text" placeholder="Nama">
+            </div>
+        </div>
+    </div>
+</p-dialog>

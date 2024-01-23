@@ -1,1 +1,44 @@
-<p>userlist works!</p>
+<div class="userlist-wrapper">
+    <h3>List Nasabah</h3>
+      <p-table
+    [value]="userlistData"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[5, 10, 20]"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nama</th>
+            <th>Nomor Rekening</th>
+            <th>Email</th>
+            <th>Nomor Telepon</th>
+            <th>Jenis Kartu Debit</th>
+            <th>Nama Gadis Ibu Kandung</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+        <tr>
+            <td>{{ item.customerName }}</td>
+            <td>{{ item.customerAccount }}</td>
+            <td>{{ item.customerEmail}}</td>
+            <td>{{ item.customerPhone}}</td>
+            <td>{{ item.customerCard.cardName}}</td>
+            <td>{{item.customerMotherName}}</td>
+            <td>{{item.createdAt}}</td>
+            <td><Button (click)="showDialog(item.customerName)">Show</Button></td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-table>
+<app-edituserlist [visible]="childVisible" [customerName]="selectedCustomerName" (closed)="handleCloseDialog()"></app-edituserlist>
+</div>

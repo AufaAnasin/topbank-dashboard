@@ -1,12 +1,9 @@
-import { BarchartModule } from './../../../component/barchart/barchart.module';
 import { NavbarModule } from '../../../component/navbar/navbar.module';
 import { SidebarModule } from '../../../component/sidebar/sidebar.module';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-
-
 
 @NgModule({
   declarations: [

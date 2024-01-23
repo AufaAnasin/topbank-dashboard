@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: '', component: DashboardComponent, 
   children: [
     { path: '', redirectTo: '', pathMatch: 'full'},
-    { path: '', loadChildren: () => import('../homedashboard/homedashboard.module').then((m) => m.HomedashboardModule) }
+    { path: '', loadChildren: () => import('../homedashboard/homedashboard.module').then((m) => m.HomedashboardModule) },
+    { path: 'userlist', loadChildren: () => import('../userlist/userlist.module').then((m) => m.UserlistModule) }
   ]
 },
 ];

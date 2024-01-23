@@ -1,0 +1,11 @@
+.dialog-wrapper { 
+    padding: 32px;
+}
+
+.input-wrapper-enable input { 
+    padding: 16px 20px 16px 20px;
+    outline: none;
+    border: 1px solid #95979D;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
