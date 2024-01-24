@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { EdituserlistComponent } from './edituserlist.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { DialogModule } from 'primeng/dialog';
   imports: [
     CommonModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule
   ],
   exports: [EdituserlistComponent]
 })

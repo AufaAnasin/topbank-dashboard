@@ -2,10 +2,52 @@
     padding: 32px;
 }
 
+.dialog-wrapper h6{ 
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
 .input-wrapper-enable input { 
-    padding: 16px 20px 16px 20px;
+    padding: 10px 14px;
     outline: none;
     border: 1px solid #95979D;
     border-radius: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    width: 100%;
 }
+
+.button-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.button-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    column-gap: 14px;
+    margin-top: 45px;
+}
+
+.button-container .close-button { 
+    width: 196px;
+    height: 44px;
+    padding: 8px 32px;
+    background-color: transparent;
+    border: 1px solid #006EFF;
+    color: #006EFF;
+    border-radius: 48px;
+}
+
+.button-container .save-button { 
+    width: 196px;
+    height: 44px;
+    padding: 8px 32px;
+    background-color: #006EFF;
+    border: 1px solid #006EFF;
+    color: #FFF;
+    border-radius: 48px;
+}
+

@@ -1,32 +1,37 @@
-<p-dialog [(visible)]="visible" [modal]="true" [showHeader]="false" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-    <div class="dialog-wrapper">
-        <h6>Edit Data Nasabah</h6>
-        <button (click)="closeDialog()">Close</button>
-        <div class="input-container">
-            <div class="input-wrapper-enable">
-                <p>Nama</p>
-                <input type="text" placeholder={{customerName}}>
+<p-dialog *ngIf="selectedAccountDetail" [(visible)]="visible" [modal]="true" [showHeader]="false" [style]="{ width: '50vw', height: '80vh' }" [draggable]="false" [resizable]="false">
+    <form [formGroup]="updateForm" (ngSubmit)="updateData()">
+        <div class="dialog-wrapper">
+            <h6>Edit Data Nasabah</h6>
+            <div class="input-container">
+                <div class="input-wrapper-enable">
+                    <p>Nama</p>
+                    <input type="text" id="customerName" formControlName="customerName" placeholder={{selectedAccountDetail?.customerName}} required>
+                </div>
+                <div class="input-wrapper-enable">
+                    <p>Nomor Rekening</p>
+                    <input type="text" placeholder={{selectedAccountDetail.customerAccount}} disabled>
+                </div>
+                <div class="input-wrapper-enable">
+                    <p>Email</p>
+                    <input type="text" id="customerEmail" formControlName="customerEmail" placeholder={{selectedAccountDetail.customerEmail}}>
+                </div>
+                <div class="input-wrapper-enable">
+                    <p>Nomor Telepon</p>
+                    <input type="text" id="customerPhone" formControlName="customerPhone" placeholder={{selectedAccountDetail.customerPhone}}>
+                </div>
+                <div class="input-wrapper-enable">
+                    <p>Jenis Kartu Kredit</p>
+                    <input type="text" placeholder={{selectedAccountDetail.customerCard.cardName}} disabled>
+                </div>
+                <div class="input-wrapper-enable">
+                    <p>Nama Gadis Ibu Kandung</p>
+                    <input type="text" id="customerMotherName" formControlName="customerMotherName" placeholder={{selectedAccountDetail.customerMotherName}}>
+                </div>
             </div>
-            <div class="input-wrapper-enable">
-                <p>Nomor Rekening</p>
-                <input type="text" placeholder="Nama">
-            </div>
-            <div class="input-wrapper-enable">
-                <p>Email</p>
-                <input type="text" placeholder="Nama">
-            </div>
-            <div class="input-wrapper-enable">
-                <p>Nomor Telepon</p>
-                <input type="text" placeholder="Nama">
-            </div>
-            <div class="input-wrapper-enable">
-                <p>Jenis Kartu Kredit</p>
-                <input type="text" placeholder="Nama">
-            </div>
-            <div class="input-wrapper-enable">
-                <p>Nama Gadis Ibu Kandung</p>
-                <input type="text" placeholder="Nama">
+            <div class="button-container">
+                <button class="close-button" (click)="closeDialog()">Batal</button>
+                <button class="save-button" type="submit">Simpan</button>
             </div>
         </div>
-    </div>
+    </form>
 </p-dialog>

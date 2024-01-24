@@ -1,5 +1,5 @@
 import { DashboardService } from './../../../service/dashboard.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-userlist',
@@ -9,17 +9,36 @@ import { Component, OnInit } from '@angular/core';
 export class UserlistComponent implements OnInit {
   userlistData: any[] = []
   childVisible: boolean = false;
-  selectedCustomerName: string = ''
+  selectedCustomerId: string = ''
+  selectedCustomerDetail: any[] = []
 
-  constructor(private dashboardService: DashboardService) {
-
+  constructor(private dashboardService: DashboardService, private el: ElementRef, private renderer: Renderer2) {
   }
-  showDialog(customerName: string): void {
-    this.selectedCustomerName = customerName 
+  showDialog(customerId: string): void {
+    this.selectedCustomerId = customerId
     this.childVisible = true
+    const selectedCustomer = this.userlistData.find(user => user.customerId == customerId)
+    if(selectedCustomer) {
+      this.selectedCustomerDetail.push(selectedCustomer);
+    }
   }
   handleCloseDialog(): void { 
     this.childVisible = false
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapeKeyPress(event: KeyboardEvent): void {
+    // Close the dialog when the "Escape" key is pressed
+    this.handleCloseDialog();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    // Close the dialog when clicking outside of it
+    const target = event.target as HTMLElement;
+    if (!this.el.nativeElement.contains(target)) {
+      this.handleCloseDialog();
+    }
   }
 
   ngOnInit(): void {

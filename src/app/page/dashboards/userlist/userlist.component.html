@@ -30,7 +30,7 @@
             <td>{{ item.customerCard.cardName}}</td>
             <td>{{item.customerMotherName}}</td>
             <td>{{item.createdAt}}</td>
-            <td><Button (click)="showDialog(item.customerName)">Show</Button></td>
+            <td><Button (click)="showDialog(item.customerId)">Show</Button></td>
         </tr>
     </ng-template>
     <ng-template pTemplate="paginatorleft">
@@ -40,5 +40,5 @@
         <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
     </ng-template>
 </p-table>
-<app-edituserlist [visible]="childVisible" [customerName]="selectedCustomerName" (closed)="handleCloseDialog()"></app-edituserlist>
+<app-edituserlist [visible]="childVisible" [selectedAccountDetail]="selectedCustomerDetail[selectedCustomerDetail.length - 1]" (closed)="handleCloseDialog()"></app-edituserlist>
 </div>
