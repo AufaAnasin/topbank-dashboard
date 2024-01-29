@@ -1,1 +1,54 @@
-<p>adminlist works!</p>
+<div class="adminlist-wrapper">
+  <p>List Admin</p>
+  <div class="top-wrapper">
+    <div class="left-top-wrapper">
+      <p>Left</p>
+    </div>
+    <div class="right-top-wrapper">
+      <div class="button-wrapper">
+        <button> <i class="pi pi-download"></i>Export</button>
+        <button (click)="showAddAdmin()"> <i class="pi pi-plus"></i> Tambah Admin</button>
+      </div>
+    </div>
+  </div>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Admin Code</th>
+                <th>Role</th>
+                <th>Created At</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let admin of adminlistData">
+                <td>{{admin.adminId}}</td>
+                <td>{{admin.adminName}}</td>
+                <td>{{admin.adminEmail}}</td>
+                <td>{{admin.adminCode}}</td>
+                <td>{{admin.adminRoleDto.adminRoleName}}</td>
+                <td>{{admin.createdAt}}</td>
+                <td><div class="button-group">
+                  <button><i class="pi pi-pencil"></i></button>
+                  <button (click)="showDialog(admin.adminId)"><i class="pi pi-trash"></i></button>
+                </div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination">
+            <div class="left-side">
+              <span>Showing {{ getStartIndex() }} to {{ getEndIndex() }} of {{ totalData }} entries</span>
+            </div>
+            <div class="right-side">
+              <button (click)="previousPage()"><i class="pi pi-chevron-left"></i></button>
+              <button (click)="nextPage()">Next Page <i class="pi pi-arrow-right"></i></button>
+            </div>
+          </div>
+    </div>
+    <app-adminadd [visible]="addAdminVisible" (closed)="handleCloseDialog()"></app-adminadd>
+    <app-deleteadmin [visible]="childVisible" (closed)="handleCloseDialog()" [adminId]="selectedAdminId"></app-deleteadmin>
+</div>

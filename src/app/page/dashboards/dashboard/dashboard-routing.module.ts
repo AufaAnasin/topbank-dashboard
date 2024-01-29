@@ -7,7 +7,8 @@ const routes: Routes = [
   children: [
     { path: '', redirectTo: '', pathMatch: 'full'},
     { path: '', loadChildren: () => import('../homedashboard/homedashboard.module').then((m) => m.HomedashboardModule) },
-    { path: 'userlist', loadChildren: () => import('../userlist/userlist.module').then((m) => m.UserlistModule) }
+    { path: 'userlist', loadChildren: () => import('../userlist/userlist.module').then((m) => m.UserlistModule) },
+    { path: 'adminlist', loadChildren: () => import('../adminlist/adminlist.module').then((m) => m.AdminlistModule) }
   ]
 },
 ];

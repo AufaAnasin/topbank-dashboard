@@ -1,0 +1,143 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  background-color: #ABB1BB;
+  color: white;
+}
+
+th:first-child {
+  border-top-left-radius: 12px;
+}
+
+th:last-child {
+  border-top-right-radius: 12px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.top-wrapper { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.top-wrapper .button-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.button-group button { 
+  border: none;
+  background-color: transparent;
+  margin-right: 12px;
+}
+
+.button-group button:nth-child(1) { 
+  background-color: #F2C94C;
+  color: white;
+  padding: 2px 2px 0px 4px;
+  border-radius: 8px;
+}
+
+.button-group button:nth-child(2) { 
+  color:#EB5757;
+}
+
+.admin-top { 
+  height: 40px;
+}
+
+.adminlist-wrapper p {
+  font-size: 18px;
+  font-weight: 600px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.pagination { 
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-side { 
+  display: flex;
+  flex-direction: row;
+}
+
+.right-side button:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #1A96F0;
+  background-color: transparent;
+  color: #1A96F0;
+  border-radius: 8px;
+}
+
+.right-side button:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: auto;
+  height: 26px;
+  border: 1px solid #1A96F0;
+  background-color: #1A96F0;
+  border-radius: 48px;
+  font-size: 12px;
+  padding: 0 16px;
+  margin-left: 12px;
+}
+
+.right-side button:nth-child(2) i{
+  margin-left: 8px;
+}
+
+
+.right-top-wrapper .button-wrapper button:nth-child(2) { 
+  padding: 10px 14px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+  background-color: #1A96F0;
+  border: 1px solid #1A96F0;
+}
+
+.right-top-wrapper .button-wrapper button:nth-child(1) { 
+  padding: 10px 14px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  color: #1A96F0;
+  background-color: #E8F5FF;
+  border: 1px solid #E8F5FF;
+}
+
+.right-top-wrapper .button-wrapper button i{ 
+  margin-right: 8px;
+}
+
+
+
+
+  

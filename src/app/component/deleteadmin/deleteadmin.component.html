@@ -1,0 +1,12 @@
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '40vw' }" [draggable]="false" [resizable]="false">
+    <div class="delete-wrapper">
+        <div class="ask-wrapper">
+            <img src="assets/warning.png" alt="Warning">
+            <p>Apakah kamu yakin ingin menghapus Admin?</p>
+            <div class="button-wrapper">
+                <button (click)="closeDialog()">Tidak</button>
+                <button (click)="deleteAdmin()">Ya</button>
+            </div>
+        </div>
+    </div>
+</p-dialog>

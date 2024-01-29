@@ -1,0 +1,40 @@
+.ask-wrapper { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 60px 32px 60px;
+}
+.ask-wrapper p { 
+    size: 18px;
+    font-weight: 700px;
+    width: 267px;
+    text-align: center;
+}
+
+.ask-wrapper img { 
+    width: 74px;
+    height: 75px;
+    margin-bottom: 18px;
+}
+
+.button-wrapper button { 
+    width: 260px;
+    height: 58px;
+    border-radius: 48px;
+    padding: 16px 48px;
+    border: none;
+}
+
+.button-wrapper button:nth-child(1) {
+    border: 1px solid #EB5757;
+    color: #EB5757;
+    background-color: transparent;
+    margin-right: 18px;
+}
+
+.button-wrapper button:nth-child(2) {
+    border: 1px solid #006EFF;
+    color: #FFF;
+    background-color:#006EFF;
+}

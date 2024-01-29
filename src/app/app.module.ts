@@ -4,12 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminlistComponent } from './page/dashboards/adminlist/adminlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminlistComponent,
   ],
   imports: [
     BrowserModule,
